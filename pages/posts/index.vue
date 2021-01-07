@@ -8,15 +8,47 @@
       >
     </div>
     <hr />
+
     <div class="container-fluid">
       <!-- {{ posts }} -->
 
       <!-- vue v-bind:key is used to render list object -->
-      <h4 v-for="post in posts" :key="post.id">{{ post.title }}</h4>
+      <!-- <h4 v-for="post in posts" :key="post.id">{{ post.title }}</h4> -->
+    </div>
+    
+    <div class="container row">
+      <!-- render in Card component -->
+      <Card v-for="post in posts" :key="post.id" :post="post" />
     </div>
   </div>
 </template>
 
+<script>
+// async await API request(simpler)
+import axios from "axios";
+import Card from "@/components/Card";
+
+export default {
+  components: {
+    Card,
+  },
+
+  data() {
+    return { posts: "null" };
+  },
+
+  //async awaits for the operation to complete before fetching
+  async asyncData() {
+    //destructuring data response(straightforward)
+    let { data } = await axios.get(
+      "https://jsonplaceholder.typicode.com/todos"
+    );
+    return { posts: data };
+  },
+};
+</script>
+
+<!--
 <script>
 // async await API request(simpler)
 import axios from "axios";
@@ -34,6 +66,7 @@ export default {
   },
 };
 </script>
+-->
 
 <!--
 <script>
