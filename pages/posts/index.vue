@@ -2,6 +2,7 @@
   <div>
     <div>
       <h2>API request test</h2>
+      <p style="display: inline">object returned from</p> <a href="https://jsonplaceholder.typicode.com/todos">jsonplaceholder.typicode.com/todos</a>
     </div>
     <hr />
     <div class="container-fluid">
