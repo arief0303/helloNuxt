@@ -3,9 +3,9 @@
     <div>
       <h2>API request test</h2>
     </div>
-
-    <div class="container">
-        <h4 v-for="post in posts" key="post.id">{{post.title}}</h4>
+    <hr />
+    <div class="container-fluid">
+      <h4 v-for="post in posts" :key="post.id">{{ post.title }}</h4>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
     };
   },
 
