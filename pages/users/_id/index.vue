@@ -6,6 +6,18 @@
 
 <script>
 export default {
+    data() {
+    return {
+      title: "userID"
+    };
+  },
+
+  head() {
+    return {
+      title: this.title,
+    };
+  },
+
     validate(context) {
         return /^\d+$/.test(context.params.id)
     }
