@@ -11,6 +11,18 @@
 </template>
 
 <script>
+// dont forget to restart server when switching to async
+export default {
+  asyncData(context){
+    // console log is displaying server-side context object 
+    console.log(context);
+  }
+};
+</script>
+
+<!-- 
+<script>
+// API request via axios(client side only)
 import axios from "axios";
 
 export default {
@@ -35,3 +47,4 @@ export default {
   },
 };
 </script>
+-->
