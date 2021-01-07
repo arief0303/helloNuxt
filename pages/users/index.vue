@@ -1,6 +1,7 @@
 <template>
 <div>
 <h1>Hello users</h1>
+<h6>Regex only accepts numerals, no letters allowed.</h6>
 <input type="text" v-model="id">
 <button @click="loadUser">Load user</button>
 </div>
