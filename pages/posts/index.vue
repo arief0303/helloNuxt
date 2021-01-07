@@ -15,7 +15,7 @@
       <!-- vue v-bind:key is used to render list object -->
       <!-- <h4 v-for="post in posts" :key="post.id">{{ post.title }}</h4> -->
     </div>
-    
+
     <div class="container row">
       <!-- render in Card component -->
       <Card v-for="post in posts" :key="post.id" :post="post" />
@@ -34,7 +34,13 @@ export default {
   },
 
   data() {
-    return { posts: "null" };
+    return { posts: "null", title: "API test" };
+  },
+
+  head() {
+    return {
+      title: this.title,
+    };
   },
 
   //async awaits for the operation to complete before fetching
